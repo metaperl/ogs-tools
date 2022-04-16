@@ -4,6 +4,7 @@ import requests
 from traitlets import HasTraits, Int, Unicode, Float
 from traitlets.config import Application
 from traitlets.config.configurable import Configurable
+import pyperclip
 
 pp = pprint.PrettyPrinter(indent=4)
 
@@ -68,7 +69,9 @@ class App(Application):
         
         {game_url}
         """
-        self.log.warning(f"u={post_title}\n\n{post_content}\n\n")
+        total_content = f"{post_title}\n{post_content}\n\n"
+        pyperclip.copy(total_content)
+        self.log.warning(total_content)
 
 
 

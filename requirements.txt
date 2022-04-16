@@ -1,2 +1,4 @@
 traitlets
 requests
+pyperclip
+
